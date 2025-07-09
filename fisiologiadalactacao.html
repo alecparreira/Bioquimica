@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: A Fisiologia da Lactação - Do Início ao Fim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #073B4C;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .flow-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            border-left: 4px solid #118AB2;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            line-height: 1;
+            color: #118AB2;
+            align-self: center;
+            font-weight: bold;
+        }
+        .hormone-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold text-[#073B4C]">A Fisiologia da Lactação: Uma Jornada Hormonal e Bioquímica</h1>
+            <p class="mt-2 text-xl text-[#118AB2]">Do desenvolvimento da glândula mamária à sua involução final.</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+
+        <!-- FASE 1: MAMOGÊNESE -->
+        <section id="mamogenese" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#073B4C]">Fase 1: Mamogênese Gestacional - A Construção da Fábrica</h2>
+            <p class="text-lg text-center text-gray-600 mb-12 max-w-4xl mx-auto">Durante a gestação, uma complexa sinfonia hormonal prepara a glândula mamária, desenvolvendo sua arquitetura para a futura produção de leite, enquanto um "freio" fisiológico impede a secreção prematura.</p>
+            
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-[#073B4C]">Orquestra Hormonal do Desenvolvimento</h3>
+                        <div class="space-y-6">
+                            <div class="flow-card">
+                                <h4 class="font-bold text-lg">Estrogênio + Progesterona</h4>
+                                <p class="text-sm text-gray-700 mt-1">Promovem o crescimento exponencial do sistema de ductos e a formação dos alvéolos secretores.</p>
+                            </div>
+                            <div class="flow-card">
+                                <h4 class="font-bold text-lg">Prolactina (PRL) + Lactogênio Placentário (PL)</h4>
+                                <p class="text-sm text-gray-700 mt-1">Induzem a diferenciação das células alveolares, preparando o maquinário celular para a síntese de leite.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-red-50 border-l-8 border-[#EF476F] p-6 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-[#EF476F]">O Freio Hormonal: Produção Inibida</h3>
+                        <p class="text-gray-700">Apesar da glândula estar pronta, os altos níveis de <strong>Progesterona</strong> durante a gestação atuam como um potente inibidor. A progesterona bloqueia a ação da <strong>Prolactina</strong> em seus receptores na célula alveolar, impedindo a transcrição dos genes do leite. A fábrica está construída, mas o interruptor principal está <strong>desligado</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASE 2: LACTOGÊNESE E GALACTOPOIESE -->
+        <section id="lactogenese" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#073B4C]">Fase 2: Lactogênese e Manutenção - A Fábrica em Operação</h2>
+            <p class="text-lg text-center text-gray-600 mb-12 max-w-4xl mx-auto">Com o parto, o freio é liberado, iniciando a produção. A manutenção da lactação (galactopoiese) depende de um reflexo neuroendócrino contínuo, estimulado pela demanda do filhote.</p>
+
+            <div class="bg-white rounded-lg shadow-xl p-8 mb-12">
+                <h3 class="text-2xl font-semibold text-center mb-6 text-[#073B4C]">O Gatilho do Parto: Liberação do Freio</h3>
+                <div class="chart-container" style="height: 300px; max-height: 300px;">
+                    <canvas id="hormoneShiftChart"></canvas>
+                </div>
+                <p class="text-center mt-6 text-gray-700">A expulsão da placenta causa uma queda abrupta da <strong>Progesterona</strong>. Sem o seu efeito inibitório, a <strong>Prolactina</strong> pode finalmente se ligar aos seus receptores e ativar a síntese massiva de leite.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-[#073B4C]">O Reflexo da Manutenção (Galactopoiese)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
+                    <div class="flow-card text-center"><strong>1. Estímulo</strong><p class="text-sm">Sucção do filhote</p></div>
+                    <div class="flow-arrow text-center hidden md:block">→</div>
+                    <div class="flow-card text-center"><strong>2. Via Nervosa</strong><p class="text-sm">Sinal sobe ao Hipotálamo</p></div>
+                    <div class="flow-arrow text-center hidden md:block">→</div>
+                    <div class="flow-card text-center"><strong>3. Resposta Dupla</strong>
+                        <div class="mt-2 text-left space-y-2">
+                            <p class="text-sm"><span class="hormone-tag bg-[#06D6A0] text-white">SÍNTESE:</span> ↓Dopamina → ↑<strong>Prolactina</strong></p>
+                            <p class="text-sm"><span class="hormone-tag bg-[#FFD166] text-black">EJEÇÃO:</span> Liberação de <strong>Ocitocina</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FASE 3: INVOLUÇÃO -->
+        <section id="involucao" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-4 text-[#073B4C]">Fase 3: Involução - Desligando a Fábrica</h2>
+            <p class="text-lg text-center text-gray-600 mb-12 max-w-4xl mx-auto">Após o desmame, a ausência de estímulo desencadeia um processo ativo e programado de regressão da glândula mamária, preparando-a para um futuro ciclo.</p>
+
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-[#073B4C]">A Cascata da Involução</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-start">
+                    <div class="flow-card text-center"><strong>1. Fim da Sucção</strong><p class="text-sm">Ausência de estímulo</p></div>
+                    <div class="flow-arrow text-center hidden md:block">→</div>
+                    <div class="flow-card text-center"><strong>2. Queda Hormonal</strong><p class="text-sm">↓ Prolactina e Ocitocina</p></div>
+                    <div class="flow-arrow text-center hidden md:block">→</div>
+                    <div class="flow-card text-center"><strong>3. Inibição Local</strong>
+                        <div class="mt-2 text-left space-y-2">
+                           <p class="text-sm">↑ Pressão interna</p>
+                           <p class="text-sm">↑ Acúmulo do <strong>FIL</strong> (Inibidor de Feedback)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-4"><div class="flow-arrow">↓</div></div>
+                <div class="flow-card max-w-md mx-auto mt-4 bg-red-50 border-[#EF476F]">
+                    <h4 class="font-bold text-lg">4. Apoptose e Remodelagem</h4>
+                    <p class="text-sm text-gray-700 mt-1">As células alveolares entram em morte celular programada. O tecido é remodelado e a glândula retorna ao estado de repouso.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-white mt-16 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>Infográfico gerado com base em material de estudo de Bioquímica e Fisiologia Veterinária.</p>
+        </div>
+    </footer>
+
+    <script>
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        };
+
+        new Chart(document.getElementById('hormoneShiftChart'), {
+            type: 'line',
+            data: {
+                labels: ['Final da Gestação', 'Parto', 'Início da Lactação'],
+                datasets: [{
+                    label: 'Progesterona (Inibidor)',
+                    data: [10, 1, 0.5],
+                    borderColor: '#EF476F',
+                    backgroundColor: 'rgba(239, 71, 111, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }, {
+                    label: 'Prolactina (Ativador)',
+                    data: [3, 8, 10],
+                    borderColor: '#06D6A0',
+                    backgroundColor: 'rgba(6, 214, 160, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Níveis Hormonais Relativos' }
+                    }
+                },
+                ...tooltipCallback
+            }
+        });
+    </script>
+</body>
+</html>
