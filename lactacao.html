@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: A Fisiologia e Bioquímica da Lactação</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #343a40;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 450px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #69B3E9;
+        }
+        .kpi-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #004AAD;
+        }
+        .hormone-card {
+            border-left: 4px solid #0079C2;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-gray-800">A Fisiologia da Lactação</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        
+        <section id="mamogenese" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-2 text-gray-900">Fase 1: Mamogênese Gestacional</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">A orquestra hormonal que constrói a glândula mamária, preparando-a para a produção.</p>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8 space-y-8">
+                <div class="hormone-card bg-blue-50 p-4 rounded-r-lg">
+                    <h3 class="text-xl font-semibold text-blue-800">Estrogênio e Progesterona</h3>
+                    <p class="text-gray-700 mt-2">Durante a gestação, altos níveis destes hormônios, vindos da placenta, promovem o crescimento máximo do sistema de ductos e o desenvolvimento dos alvéolos secretores. Eles constroem a estrutura da fábrica.</p>
+                </div>
+                <div class="hormone-card bg-blue-50 p-4 rounded-r-lg">
+                    <h3 class="text-xl font-semibold text-blue-800">Prolactina (PRL) e Lactogênio Placentário (PL)</h3>
+                    <p class="text-gray-700 mt-2">A <strong>Prolactina</strong>, da hipófise, e o <strong>Lactogênio Placentário</strong> preparam as células alveolares para a síntese, mas sua ação é limitada. A alta <strong>Progesterona</strong> atua como um <strong>"freio de mão"</strong>, bloqueando os receptores de prolactina e impedindo a produção de leite em larga escala.</p>
+                </div>
+                 <div class="text-center bg-gray-100 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-800">Resultado da Fase: A glândula está totalmente desenvolvida e pronta, mas a produção de leite está fisiologicamente inibida, aguardando o sinal do parto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lactogenese" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-2 text-gray-900">Fase 2: Lactogênese e Galactopoiese</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">O início da secreção no parto e a manutenção contínua da produção.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Lactogênese: O Início da Produção</h3>
+                    <p class="text-center text-gray-700 mb-6">Com o parto e a expulsão da placenta, os níveis de <strong>Progesterona</strong> caem abruptamente. Este evento libera o "freio" dos receptores da glândula mamária, permitindo que a <strong>Prolactina</strong> se ligue e inicie a síntese massiva de leite. Hormônios como <strong>Cortisol</strong> e <strong>Insulina</strong> são permissivos e essenciais para este processo.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Galactopoiese: A Manutenção</h3>
+                    <p class="text-gray-700 mb-4">A manutenção da lactação depende do estímulo da sucção, que dispara um reflexo neuroendócrino:</p>
+                    <ul class="space-y-3">
+                        <li><strong class="text-blue-700">Estímulo Tátil → Hipotálamo:</strong> O filhote suga, enviando um sinal nervoso ao cérebro.</li>
+                        <li><strong class="text-blue-700">Resposta 1 (Síntese):</strong> O hipotálamo inibe a liberação de <strong>Dopamina</strong>, permitindo que a hipófise libere <strong>Prolactina</strong> para produzir mais leite para a próxima mamada.</li>
+                        <li><strong class="text-blue-700">Resposta 2 (Ejeção):</strong> O hipotálamo estimula a neuro-hipófise a liberar <strong>Ocitocina</strong>, que contrai as células mioepiteliais e ejeta o leite armazenado.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="bioquimica" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-2 text-gray-900">A Receita Bioquímica</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">Os principais precursores para a síntese dos componentes do leite em Ruminantes.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Síntese de Lactose</h3>
+                    <div class="chart-container" style="height: 250px; max-height: 250px;">
+                        <canvas id="lactoseChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-700">A <strong>Glicose</strong>, vinda da gliconeogênese a partir do <strong>Propionato</strong>, é o pilar. Controla o volume do leite.</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Síntese de Gordura</h3>
+                    <div class="chart-container" style="height: 250px; max-height: 250px;">
+                        <canvas id="gorduraChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-700">O <strong>Acetato</strong> e o <strong>β-hidroxibutirato</strong>, do rúmen, são os principais blocos para a síntese de ácidos graxos.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-center mb-4">Síntese de Proteínas</h3>
+                    <div class="chart-container" style="height: 250px; max-height: 250px;">
+                        <canvas id="proteinaChart"></canvas>
+                    </div>
+                    <p class="text-center mt-4 text-gray-700">Os <strong>Aminoácidos</strong>, captados diretamente do sangue, são os precursores para caseínas e proteínas do soro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="fim-lactacao" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-2 text-gray-900">Fase 3: Fim da Lactação e Involução</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">O processo fisiológico que desliga a produção de leite após o desmame.</p>
+            
+            <div class="bg-white rounded-lg shadow-lg p-8 space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Cessação do Estímulo</h3>
+                    <p class="text-gray-700 mt-2">Com o fim da sucção, o reflexo neuroendócrino é interrompido. Os níveis sistêmicos de <strong>Prolactina</strong> e <strong>Ocitocina</strong> caem, removendo o principal suporte hormonal para a síntese e ejeção do leite.</p>
+                </div>
+                <hr>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Inibição Local e Apoptose</h3>
+                    <p class="text-gray-700 mt-2">O leite residual acumulado nos alvéolos aumenta a pressão interna, inibindo fisicamente a secreção. Além disso, um fator chamado <strong>FIL (Feedback Inhibitor of Lactation)</strong>, presente no próprio leite, se acumula e sinaliza para as células pararem a produção. Este conjunto de sinais desencadeia a <strong>apoptose</strong> (morte celular programada) das células alveolares, e a glândula regride ao seu estado de repouso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="especies" class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-2 text-gray-900">Um Cardápio para Cada Filhote</h2>
+            <p class="text-xl text-center text-gray-600 mb-12">A composição do leite é uma adaptação perfeita às necessidades de cada espécie.</p>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-semibold text-center mb-6">Comparativo de Macronutrientes</h3>
+                <div class="chart-container">
+                    <canvas id="speciesChart"></canvas>
+                </div>
+                 <p class="text-center mt-6 text-gray-700">Observe como o leite se adapta: alta lactose para o desenvolvimento cerebral (Humano), alta proteína para o crescimento rápido (Vaca) e altíssima gordura para o isolamento térmico (Foca).</p>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-white mt-16 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>Infográfico gerado com base em material de estudo de Bioquímica e Fisiologia Veterinária.</p>
+        </div>
+    </footer>
+
+    <script>
+        function wrapLabel(str, maxWidth) {
+            if (!str || str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                const testLine = currentLine.length > 0 ? `${currentLine} ${word}` : word;
+                if (testLine.length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = testLine;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                }
+            }
+        };
+
+        const doughnutOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '70%',
+            plugins: tooltipCallback.plugins
+        };
+
+        new Chart(document.getElementById('lactoseChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Propionato (via Gliconeogênese)'],
+                datasets: [{
+                    label: 'Precursor',
+                    data: [100],
+                    backgroundColor: ['#69B3E9'],
+                    borderColor: ['#FFFFFF'],
+                    borderWidth: 2
+                }]
+            },
+            options: doughnutOptions
+        });
+
+        new Chart(document.getElementById('gorduraChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Acetato', 'β-hidroxibutirato'],
+                datasets: [{
+                    label: 'Precursores',
+                    data: [75, 25],
+                    backgroundColor: ['#0079C2', '#B3D4F5'],
+                    borderColor: ['#FFFFFF', '#FFFFFF'],
+                    borderWidth: 2
+                }]
+            },
+            options: doughnutOptions
+        });
+
+        new Chart(document.getElementById('proteinaChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Aminoácidos do Sangue'],
+                datasets: [{
+                    label: 'Precursor',
+                    data: [100],
+                    backgroundColor: ['#004AAD'],
+                    borderColor: ['#FFFFFF'],
+                    borderWidth: 2
+                }]
+            },
+            options: doughnutOptions
+        });
+        
+        const speciesData = {
+            labels: [
+                wrapLabel('Humano', 16),
+                wrapLabel('Vaca', 16), 
+                wrapLabel('Mamífero Marinho (Foca)', 16),
+                wrapLabel('Coelho', 16)
+            ],
+            datasets: [{
+                label: 'Proteína (%)',
+                data: [1.0, 3.5, 11.0, 15.0],
+                backgroundColor: '#004AAD',
+                borderColor: '#003B8D',
+                borderWidth: 1
+            }, {
+                label: 'Gordura (%)',
+                data: [4.4, 4.0, 53.0, 18.0],
+                backgroundColor: '#0079C2',
+                borderColor: '#0067A3',
+                borderWidth: 1
+            }, {
+                label: 'Lactose (%)',
+                data: [7.0, 4.8, 0.1, 2.0],
+                backgroundColor: '#69B3E9',
+                borderColor: '#54A0D3',
+                borderWidth: 1
+            }]
+        };
+
+        new Chart(document.getElementById('speciesChart'), {
+            type: 'bar',
+            data: speciesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Concentração (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Espécie'
+                        }
+                    }
+                },
+                ...tooltipCallback
+            }
+        });
+    </script>
+</body>
+</html>
